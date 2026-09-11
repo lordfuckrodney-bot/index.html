@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our O-Level Journey | Memories & Friends</title>
+  <style>
+    /* CSS RESET & VARIABLES */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    :root {
+      --primary: #2b580c;
+      --secondary: #639a67;
+      --accent: #f7c815;
+      --bg-light: #f9f9f9;
+      --text-dark: #333;
+      --text-light: #fff;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: var(--primary);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    nav h1 {
+      color: var(--text-light);
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 1.5rem;
+    }
+
+    nav ul li a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                  url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: var(--text-light);
+      padding: 0 1rem;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    /* SECTIONS GENERAL */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+
+    /* TIMELINE (S.1 to S.4) */
+    .timeline {
+      position: relative;
+      margin: 2rem 0;
+    }
+
+    .timeline-item {
+      padding: 1.5rem;
+      background: #fff;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      border-left: 5px solid var(--secondary);
+    }
+
+    .timeline-item h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    /* FRIENDS CARDS */
+    .friends-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .friend-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 1.5rem;
+      transition: transform 0.3s;
+    }
+
+    .friend-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .friend-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid var(--secondary);
+    }
+
+    .friend-card h4 {
+      color: var(--secondary);
+      margin-bottom: 0.2rem;
+    }
+
+    .friend-card .tag {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      font-size: 0.8rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: bold;
+      margin-bottom: 0.8rem;
+    }
+
+    /* MEMORY GALLERY */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 200px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--primary);
+      color: var(--text-light);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+      nav ul {
+        margin-top: 1rem;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+  .auto-style1 {
+	font-family: "Ink Free";
+}
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h1>O-Level Memories</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#timeline">The Years</a></li>
+      <li><a href="#friends">The Squad</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <h2>Unforgettable O-Level Days</h2>
+    <p>A tribute to the laughs, exams, late nights, and lifelong friendships created during our Ordinary Level school years.</p>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h2 class="section-title">The Journey</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+      From stepping into high school for the first time as nervous freshmen to walking out as confident O-Level graduates, these years shaped who we are. Through long study sessions, sports days, hidden lunches, and endless banter, we made memories that will last a lifetime.
+    </p>
+  </section>
+
+  <!-- TIMELINE SECTION -->
+  <section id="timeline">
+    <h2 class="section-title">Year by Year</h2>
+    <div class="timeline">
+      
+      <div class="timeline-item">
+        <h3>Senior 1 / Year 1 — The Freshmen Days</h3>
+        <p>New uniforms, oversized bags, and trying to figure out where all the classrooms were. This was the year we all met and formed our first inner circles.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Senior 2 / Year 2 — Finding Our Groove</h3>
+        <p>No longer the youngest! We got comfortable, started cracking jokes in class, got involved in clubs and sports, and spent way too much time at the school canteen.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Senior 3 / Year 3 — Subject Choices & Chaos</h3>
+        <p>Picking our specialized subjects. Reality hit us a bit, but our bonds grew stronger. Unforgettable school trips, inter-house competitions, and legendary pranks.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Senior 4 / Year 4 — The Final Stretch & UNEB/Exams</h3>
+        <p>Late-night night prep, past-paper revisions, stress, and final goodbyes. We conquered O-Levels together as a family!</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FRIENDS / SQUAD SECTION -->
+  <section id="friends">
+    <h2 class="section-title">The Squad (Hall of Fame)</h2>
+    <div class="friends-grid">
+
+      <div class="friend-card">
+        <img src="https://via.placeholder.com/100" alt="Friend 1">
+        <h4><span class="auto-style1">MUMBERE</span>&nbsp;</h4>
+		  <p class="auto-style1">ALWAYS THE CARD PRO</p>
+        &nbsp;<p>Always shared assignment answers 5 minutes before the teacher walked in.</p>
+      </div>
+
+      <div class="friend-card">
+          <img alt="FF7" src="../../Downloads/Screenshot_20251115-151735~2.jpg" style="width: 128px; height: 135px">
+        <h4 class="auto-style1">SANYU</h4>
+		  <p class="auto-style1">NEVA GAVE UP&nbsp;</p>
+        &nbsp;<p class="auto-style1">Was a friend who always got u back&nbsp;</p>
+      </div>
+
+      <div class="friend-card">
+          <img alt="HJ7" src="../../Downloads/original_7fa773f8-0325-4055-818a-3cedf8ea7e59_Screenshot_20251225-002819.png" style="height: 132px; width: 132px" width="68">
+        <h4><span class="auto-style1">TYRONE AKA TERO</span>&nbsp;</h4>
+		  <p><span class="auto-style1">THE GUY WITH THE PLAN</span>&nbsp;</p>
+        &nbsp;<p><span class="auto-style1">ALWAYS COOKING UP SOMETHING</span>&nbsp;</p>
+		  <p>
+		  <img alt="KI8" src="../../Downloads/IMG-20260712-WA0001.jpg" style="width: 218px; height: 300px"></p>
+		  <p class="auto-style1">KING RODNEY</p>
+		  <span class="tag">The Legend</span>
+		  <p>The mastermind who created this website to keep our memories alive!</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section id="gallery">
+    <h2 class="section-title">Photo Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+          <img alt="H7" src="../../Downloads/IMG-20260514-WA0047.jpg" style="height: 96%">
+      </div>
+      <div class="gallery-item">
+          <img alt="J7" height="130" src="../../Downloads/Screenshot_20251211-231230.png" width="90">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=500&q=80" alt="Classroom memory">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=500&q=80" alt="Studying together">
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>O-Level Class Memories &copy; Built with ❤️ for the best squad ever.</p>
+  </footer>
+
+</body>
+</html>
